@@ -31,6 +31,7 @@ button:disabled { opacity: .45; cursor: default; }
   align-items: center;
   margin: 1.5rem 0;
 }
+main > section > h1[tabindex="-1"]:focus,
 #display:focus { outline: none; }
 .stimulus, .fixation, .mask { grid-area: 3 / 1 / 4 / 5; }
 .stimulus, .mask { display: grid; grid-template-columns: repeat(4, 1fr); }
