@@ -4,7 +4,7 @@ This browser-based classroom demonstration adapts Reicher’s (1969) letter-iden
 
 ## Procedure
 
-Participants complete **6 practice trials with feedback** and **48 scored trials without feedback**. The scored trials are shuffled, with 16 trials per condition and four trials at each letter position within each condition.
+Participants complete **6 practice trials with feedback** and **48 scored trials without feedback**. Use a keyboard throughout. Press **Enter** to continue between screens, **Space** to start each trial, and **1** or **2** to answer. A reminder screen appears after practice. The scored trials are shuffled, with 16 trials per condition and four trials at each letter position within each condition.
 
 | Condition | Example stimulus | Tested position | Response options |
 | --- | --- | --- | --- |
@@ -16,15 +16,18 @@ In the word condition, either response option completes a valid word (`WORD` or 
 
 ### Trial sequence
 
-1. Look at the fixation cross and select **Show stimulus**. The cross stays on screen for about **500 ms** after selection.
+1. When **Ready** appears, look at the fixation cross and press **Space**. The cross stays on screen for about **500 ms** after you start the trial.
 2. The stimulus flashes in black uppercase text on a white background for approximately **50 ms**. Actual exposure can vary with the browser and display refresh rate.
 3. A mask of overlapping Xs and Os immediately replaces the stimulus. Two numbered letter choices appear above the tested position at the same time.
-4. Press **1** or **2**, or select a choice on screen. The mask and choices stay visible until you answer. Guess if unsure.
+4. Press **1** or **2**. The mask and choices stay visible until you answer. Guess if unsure. After you answer, press **Space** when **Ready** appears to start the next trial.
 
 ## Results
 
-The results panel shows a separate accuracy bar for **words**, **nonwords**, and **single letters**. Each bar displays the number correct out of 16 and the corresponding percentage. Compare word and single-letter accuracy to examine the word superiority effect. Individual scores can vary across 16 trials per condition, so the class average provides a more stable comparison.
+The results panel shows a separate accuracy bar for **words**, **nonwords**, and **single letters**. Each bar displays the number correct out of 16 and the corresponding percentage. On the results screen, press **Enter** to start a fresh set of 48 scored trials. Compare word and single-letter accuracy to examine the word superiority effect. Individual scores can vary across 16 trials per condition, so the class average provides a more stable comparison.
 
+## Run the demo
+
+Open the published GitHub Pages site for this repository.
 
 | File | Purpose |
 | --- | --- |
