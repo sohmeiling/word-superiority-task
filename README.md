@@ -25,13 +25,6 @@ In the word condition, either response option completes a valid word (`WORD` or 
 
 The results panel shows a separate accuracy bar for **words**, **nonwords**, and **single letters**. Each bar displays the number correct out of 16 and the corresponding percentage. Compare word and single-letter accuracy to examine the word superiority effect. Individual scores can vary across 16 trials per condition, so the class average provides a more stable comparison.
 
-## Run the demo
-
-Open the published GitHub Pages site for this repository. To run locally, start a web server from the repository folder so the page can load `stimuli.json`.
-
-```bash
-python3 -m http.server 8000
-```
 
 Then open [localhost:8000](http://localhost:8000).
 
