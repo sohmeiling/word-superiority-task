@@ -26,8 +26,6 @@ In the word condition, either response option completes a valid word (`WORD` or 
 The results panel shows a separate accuracy bar for **words**, **nonwords**, and **single letters**. Each bar displays the number correct out of 16 and the corresponding percentage. Compare word and single-letter accuracy to examine the word superiority effect. Individual scores can vary across 16 trials per condition, so the class average provides a more stable comparison.
 
 
-Then open [localhost:8000](http://localhost:8000).
-
 | File | Purpose |
 | --- | --- |
 | `index.html` | Instructions, task screens, and results |
