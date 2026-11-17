@@ -11,11 +11,12 @@ let bank;
 let trials;
 let index = 0;
 let practice = true;
-let stage = "idle";
+let stage = "loading";
 let animationFrame;
 let choices = [];
 
 function show(id) {
+  stage = id;
   for (const screen of document.querySelectorAll("main > section")) {
     screen.hidden = screen.id !== id;
   }
@@ -62,7 +63,6 @@ function begin(isPractice) {
     ...item, condition: i % 3, alternate: false, correctSlot: i % 2,
   })) : scoredTrials();
   get("task-heading").textContent = practice ? "Practice" : "Task";
-  get("scored-start").hidden = true;
   show("task");
   ready();
 }
@@ -144,12 +144,11 @@ function showChoices(trial) {
   }
   display.replaceChildren(mask);
   choices.forEach((letter, slot) => {
-    const option = document.createElement("button");
+    const option = document.createElement("span");
     option.className = "choice";
     option.style.gridColumn = trial.targetIndex + 1;
     option.style.gridRow = slot + 1;
     option.textContent = `${slot + 1} · ${letter}`;
-    option.addEventListener("click", () => respond(slot));
     display.append(option);
   });
 }
@@ -164,7 +163,6 @@ function respond(slot) {
     score.total++;
     score.correct += Number(correct);
     if (index === trials.length) {
-      stage = "done";
       show("done");
     } else {
       ready();
@@ -172,16 +170,14 @@ function respond(slot) {
     return;
   }
 
+  const message = correct ? "Correct." : `The correct letter was ${choices[trial.correctSlot]}.`;
   if (index < trials.length) {
     ready();
+    feedback.textContent = message;
   } else {
-    stage = "practice-complete";
-    display.replaceChildren();
-    next.hidden = true;
-    get("scored-start").hidden = false;
-    get("scored-start").focus();
+    get("last-practice-feedback").textContent = message;
+    show("practice-complete");
   }
-  feedback.textContent = correct ? "Correct." : `The correct letter was ${choices[trial.correctSlot]}.`;
 }
 
 function results() {
@@ -213,18 +209,26 @@ function results() {
   show("results");
 }
 
-get("start").addEventListener("click", () => show("instructions"));
-get("practice-start").addEventListener("click", () => begin(true));
-get("scored-start").addEventListener("click", () => begin(false));
-get("view-results").addEventListener("click", results);
-get("try-again").addEventListener("click", () => begin(false));
-next.addEventListener("click", startTrial);
+const enterActions = {
+  welcome: () => show("instructions"),
+  instructions: () => begin(true),
+  "practice-complete": () => begin(false),
+  done: results,
+  results: () => begin(false),
+};
 document.addEventListener("keydown", (event) => {
-  if (event.key === " " && ["ready", "fixation", "stimulus"].includes(stage)) {
+  if (event.key === " ") {
     event.preventDefault();
     if (stage === "ready" && !event.repeat) startTrial();
+    return;
   }
-  if (stage === "response" && !event.repeat && ["1", "2"].includes(event.key)) {
+  if (event.repeat) return;
+  if (event.key === "Enter" && enterActions[stage]) {
+    event.preventDefault();
+    enterActions[stage]();
+    return;
+  }
+  if (stage === "response" && ["1", "2"].includes(event.key)) {
     event.preventDefault();
     respond(Number(event.key) - 1);
   }
@@ -243,7 +247,8 @@ fetch("stimuli.json")
   })
   .then((data) => {
     bank = data;
-    get("start").disabled = false;
+    stage = "welcome";
+    get("start").hidden = false;
     get("load-status").textContent = "";
   })
   .catch(() => {
