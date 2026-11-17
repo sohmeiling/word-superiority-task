@@ -18,10 +18,10 @@
     <section id="instructions" hidden>
       <h1>Instructions</h1>
       <ol>
-        <li>Look at the <strong>+</strong> in the centre.</li>
+        <li>When you see <strong>Ready</strong>, look at the <strong>+</strong> and press <kbd>Space</kbd> or tap <strong>Ready</strong>.</li>
         <li>Four letters or a single letter will flash briefly.</li>
         <li>A mask and two numbered choices will appear. Their column shows which position to report.</li>
-        <li>Press <kbd>1</kbd> or <kbd>2</kbd>, or select a choice. Guess if you are unsure.</li>
+        <li>Press <kbd>1</kbd> or <kbd>2</kbd>, or select a choice. Take as much time as you need and guess if you are unsure.</li>
       </ol>
       <p>Example. If you saw <strong>LAMP</strong> and the choices in the first column were <strong>1 L</strong> and <strong>2 D</strong>, choose <strong>1 L</strong>.</p>
       <button id="practice-start">Start practice</button>
@@ -29,9 +29,9 @@
     <section id="task" hidden>
       <h1 id="task-heading">Practice</h1>
       <p id="progress"></p>
-      <div id="display" role="group" aria-label="Trial display"></div>
+      <div id="display" tabindex="-1" role="group" aria-label="Trial display"></div>
       <p id="feedback" role="status"></p>
-      <button id="next">Show stimulus</button>
+      <button id="next">Ready · press Space</button>
       <button id="scored-start" hidden>Start scored task</button>
     </section>
     <section id="done" hidden>
@@ -45,6 +45,7 @@
       <div id="chart"></div>
       <p>The <strong>word superiority effect</strong> is the tendency to identify a briefly presented letter more accurately when it appears in a word than when it appears alone. Compare your word and single-letter scores. The nonword condition shows how you performed when the letter appeared in a scrambled string.</p>
       <p>Each condition has 16 trials, so scores can vary from person to person. A class average gives a more stable comparison.</p>
+      <button id="try-again">Try again</button>
     </section>
   </main>
 </body>
