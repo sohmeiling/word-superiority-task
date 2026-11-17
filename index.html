@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Word Superiority Task</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main>
+    <section id="welcome">
+      <h1>Word Superiority Task</h1>
+      <p>6 practice trials and 48 scored trials. Allow about 4–6 minutes.</p>
+      <button id="start" disabled>Start</button>
+      <p id="load-status" role="status">Loading stimuli…</p>
+    </section>
+    <section id="instructions" hidden>
+      <h1>Instructions</h1>
+      <ol>
+        <li>Look at the <strong>+</strong> in the centre.</li>
+        <li>Four letters or a single letter will flash briefly.</li>
+        <li>A mask and two numbered choices will appear. Their column shows which position to report.</li>
+        <li>Press <kbd>1</kbd> or <kbd>2</kbd>, or select a choice. Guess if you are unsure.</li>
+      </ol>
+      <p>Example. If you saw <strong>LAMP</strong> and the choices in the first column were <strong>1 L</strong> and <strong>2 D</strong>, choose <strong>1 L</strong>.</p>
+      <button id="practice-start">Start practice</button>
+    </section>
+    <section id="task" hidden>
+      <h1 id="task-heading">Practice</h1>
+      <p id="progress"></p>
+      <div id="display" role="group" aria-label="Trial display"></div>
+      <p id="feedback" role="status"></p>
+      <button id="next">Show stimulus</button>
+      <button id="scored-start" hidden>Start scored task</button>
+    </section>
+    <section id="done" hidden>
+      <h1>Done</h1>
+      <p>You’ve completed the task.</p>
+      <button id="view-results">View results</button>
+    </section>
+    <section id="results" hidden>
+      <h1>Your results</h1>
+      <p>Letter identification accuracy</p>
+      <div id="chart"></div>
+      <p>The <strong>word superiority effect</strong> is the tendency to identify a briefly presented letter more accurately when it appears in a word than when it appears alone. Compare your word and single-letter scores. The nonword condition shows how you performed when the letter appeared in a scrambled string.</p>
+      <p>Each condition has 16 trials, so scores can vary from person to person. A class average gives a more stable comparison.</p>
+    </section>
+  </main>
+</body>
+</html>

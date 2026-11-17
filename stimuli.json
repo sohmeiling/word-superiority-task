@@ -1,0 +1,330 @@
+{
+  "scored": [
+    {
+      "word": "COLD",
+      "alternateWord": "GOLD",
+      "nonword": "CODL",
+      "targetIndex": 0
+    },
+    {
+      "word": "BAKE",
+      "alternateWord": "CAKE",
+      "nonword": "BAEK",
+      "targetIndex": 0
+    },
+    {
+      "word": "BEND",
+      "alternateWord": "LEND",
+      "nonword": "BEDN",
+      "targetIndex": 0
+    },
+    {
+      "word": "CAVE",
+      "alternateWord": "SAVE",
+      "nonword": "CAEV",
+      "targetIndex": 0
+    },
+    {
+      "word": "DUST",
+      "alternateWord": "JUST",
+      "nonword": "DUTS",
+      "targetIndex": 0
+    },
+    {
+      "word": "FAIR",
+      "alternateWord": "HAIR",
+      "nonword": "FARI",
+      "targetIndex": 0
+    },
+    {
+      "word": "GATE",
+      "alternateWord": "LATE",
+      "nonword": "GTAE",
+      "targetIndex": 0
+    },
+    {
+      "word": "POST",
+      "alternateWord": "COST",
+      "nonword": "POTS",
+      "targetIndex": 0
+    },
+    {
+      "word": "LOCK",
+      "alternateWord": "ROCK",
+      "nonword": "LOKC",
+      "targetIndex": 0
+    },
+    {
+      "word": "MICE",
+      "alternateWord": "RICE",
+      "nonword": "MIEC",
+      "targetIndex": 0
+    },
+    {
+      "word": "PAIL",
+      "alternateWord": "SAIL",
+      "nonword": "PILA",
+      "targetIndex": 0
+    },
+    {
+      "word": "TALL",
+      "alternateWord": "WALL",
+      "nonword": "TLAL",
+      "targetIndex": 0
+    },
+    {
+      "word": "BALE",
+      "alternateWord": "BILE",
+      "nonword": "BAEL",
+      "targetIndex": 1
+    },
+    {
+      "word": "BAND",
+      "alternateWord": "BOND",
+      "nonword": "BADN",
+      "targetIndex": 1
+    },
+    {
+      "word": "BELL",
+      "alternateWord": "BILL",
+      "nonword": "LEBL",
+      "targetIndex": 1
+    },
+    {
+      "word": "CARE",
+      "alternateWord": "CURE",
+      "nonword": "CAER",
+      "targetIndex": 1
+    },
+    {
+      "word": "DATE",
+      "alternateWord": "DOTE",
+      "nonword": "DAET",
+      "targetIndex": 1
+    },
+    {
+      "word": "FARE",
+      "alternateWord": "FIRE",
+      "nonword": "FAER",
+      "targetIndex": 1
+    },
+    {
+      "word": "HARE",
+      "alternateWord": "HIRE",
+      "nonword": "HAER",
+      "targetIndex": 1
+    },
+    {
+      "word": "HALL",
+      "alternateWord": "HILL",
+      "nonword": "LAHL",
+      "targetIndex": 1
+    },
+    {
+      "word": "LACK",
+      "alternateWord": "LICK",
+      "nonword": "LAKC",
+      "targetIndex": 1
+    },
+    {
+      "word": "MATE",
+      "alternateWord": "MITE",
+      "nonword": "MAET",
+      "targetIndex": 1
+    },
+    {
+      "word": "PACK",
+      "alternateWord": "PECK",
+      "nonword": "PAKC",
+      "targetIndex": 1
+    },
+    {
+      "word": "SORE",
+      "alternateWord": "SURE",
+      "nonword": "ROES",
+      "targetIndex": 1
+    },
+    {
+      "word": "CART",
+      "alternateWord": "CAST",
+      "nonword": "CTRA",
+      "targetIndex": 2
+    },
+    {
+      "word": "BANK",
+      "alternateWord": "BARK",
+      "nonword": "BKNA",
+      "targetIndex": 2
+    },
+    {
+      "word": "CAME",
+      "alternateWord": "CASE",
+      "nonword": "CEMA",
+      "targetIndex": 2
+    },
+    {
+      "word": "BOAT",
+      "alternateWord": "BOOT",
+      "nonword": "BTAO",
+      "targetIndex": 2
+    },
+    {
+      "word": "CAMP",
+      "alternateWord": "CARP",
+      "nonword": "CPMA",
+      "targetIndex": 2
+    },
+    {
+      "word": "DINE",
+      "alternateWord": "DIVE",
+      "nonword": "DENI",
+      "targetIndex": 2
+    },
+    {
+      "word": "MUST",
+      "alternateWord": "MUTT",
+      "nonword": "MTSU",
+      "targetIndex": 2
+    },
+    {
+      "word": "FEET",
+      "alternateWord": "FELT",
+      "nonword": "FTEE",
+      "targetIndex": 2
+    },
+    {
+      "word": "HINT",
+      "alternateWord": "HILT",
+      "nonword": "HTNI",
+      "targetIndex": 2
+    },
+    {
+      "word": "LAND",
+      "alternateWord": "LARD",
+      "nonword": "LDNA",
+      "targetIndex": 2
+    },
+    {
+      "word": "MEND",
+      "alternateWord": "MELD",
+      "nonword": "MDNE",
+      "targetIndex": 2
+    },
+    {
+      "word": "WAND",
+      "alternateWord": "WARD",
+      "nonword": "WDNA",
+      "targetIndex": 2
+    },
+    {
+      "word": "WORD",
+      "alternateWord": "WORK",
+      "nonword": "OWRD",
+      "targetIndex": 3
+    },
+    {
+      "word": "MAIN",
+      "alternateWord": "MAIL",
+      "nonword": "AIMN",
+      "targetIndex": 3
+    },
+    {
+      "word": "BOLD",
+      "alternateWord": "BOLT",
+      "nonword": "OBLD",
+      "targetIndex": 3
+    },
+    {
+      "word": "COAL",
+      "alternateWord": "COAT",
+      "nonword": "CAOL",
+      "targetIndex": 3
+    },
+    {
+      "word": "DARK",
+      "alternateWord": "DART",
+      "nonword": "ADRK",
+      "targetIndex": 3
+    },
+    {
+      "word": "DEAL",
+      "alternateWord": "DEAR",
+      "nonword": "EDAL",
+      "targetIndex": 3
+    },
+    {
+      "word": "FOAL",
+      "alternateWord": "FOAM",
+      "nonword": "FAOL",
+      "targetIndex": 3
+    },
+    {
+      "word": "HARM",
+      "alternateWord": "HARP",
+      "nonword": "HRAM",
+      "targetIndex": 3
+    },
+    {
+      "word": "TURN",
+      "alternateWord": "TURF",
+      "nonword": "UTRN",
+      "targetIndex": 3
+    },
+    {
+      "word": "MASH",
+      "alternateWord": "MASK",
+      "nonword": "MSAH",
+      "targetIndex": 3
+    },
+    {
+      "word": "NEAT",
+      "alternateWord": "NEAR",
+      "nonword": "NAET",
+      "targetIndex": 3
+    },
+    {
+      "word": "SEAT",
+      "alternateWord": "SEAL",
+      "nonword": "SAET",
+      "targetIndex": 3
+    }
+  ],
+  "practice": [
+    {
+      "word": "LAMP",
+      "alternateWord": "DAMP",
+      "nonword": "LAPM",
+      "targetIndex": 0
+    },
+    {
+      "word": "TENT",
+      "alternateWord": "TINT",
+      "nonword": "TETN",
+      "targetIndex": 1
+    },
+    {
+      "word": "TASK",
+      "alternateWord": "TALK",
+      "nonword": "TKSA",
+      "targetIndex": 2
+    },
+    {
+      "word": "FORK",
+      "alternateWord": "FORM",
+      "nonword": "OFRK",
+      "targetIndex": 3
+    },
+    {
+      "word": "DASH",
+      "alternateWord": "CASH",
+      "nonword": "DAHS",
+      "targetIndex": 0
+    },
+    {
+      "word": "SINK",
+      "alternateWord": "SILK",
+      "nonword": "SKNI",
+      "targetIndex": 2
+    }
+  ]
+}
