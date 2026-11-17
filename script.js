@@ -12,7 +12,7 @@ let trials;
 let index = 0;
 let practice = true;
 let stage = "idle";
-let exposureStart;
+let animationFrame;
 let choices = [];
 
 function show(id) {
@@ -52,6 +52,12 @@ function scoredTrials() {
 function begin(isPractice) {
   practice = isPractice;
   index = 0;
+  if (!practice) {
+    for (const score of scores) {
+      score.correct = 0;
+      score.total = 0;
+    }
+  }
   trials = practice ? bank.practice.map((item, i) => ({
     ...item, condition: i % 3, alternate: false, correctSlot: i % 2,
   })) : scoredTrials();
@@ -78,13 +84,16 @@ function ready() {
   feedback.textContent = "";
   drawText("+", "fixation");
   next.hidden = false;
-  next.focus();
+  next.style.visibility = "";
+  display.focus({ preventScroll: true });
 }
 
 function startTrial() {
   if (stage !== "ready") return;
   stage = "fixation";
-  next.hidden = true;
+  display.focus({ preventScroll: true });
+  next.style.visibility = "hidden";
+  feedback.textContent = "";
   const trial = trials[index];
   const { word, alternateWord, targetIndex, nonword, alternate, condition } = trial;
   const correct = (alternate ? alternateWord : word)[targetIndex];
@@ -94,7 +103,7 @@ function startTrial() {
   const stimulus = [alternate ? alternateWord : word, scrambled, letter][condition];
   choices = trial.correctSlot === 0 ? [correct, foil] : [foil, correct];
 
-  exposureStart = undefined;
+  let exposureEnd;
   let fixationStart;
   let previousFrame;
   function animate(timestamp) {
@@ -104,19 +113,19 @@ function startTrial() {
       if (timestamp - fixationStart >= 500) {
         const frameLength = timestamp - previousFrame;
         // Snap about 50 ms to the nearest estimated display frame.
-        exposureStart = timestamp + Math.max(1, Math.round(50 / frameLength)) * frameLength
+        exposureEnd = timestamp + Math.max(1, Math.round(50 / frameLength)) * frameLength
           - frameLength / 2;
         stage = "stimulus";
         drawText(stimulus, "stimulus");
       }
-    } else if (timestamp >= exposureStart) {
+    } else if (timestamp >= exposureEnd) {
       showChoices(trial);
       return;
     }
     previousFrame = timestamp;
-    requestAnimationFrame(animate);
+    animationFrame = requestAnimationFrame(animate);
   }
-  requestAnimationFrame(animate);
+  animationFrame = requestAnimationFrame(animate);
 }
 
 function showChoices(trial) {
@@ -143,7 +152,6 @@ function showChoices(trial) {
     option.addEventListener("click", () => respond(slot));
     display.append(option);
   });
-  display.querySelector("button").focus({ preventScroll: true });
 }
 
 function respond(slot) {
@@ -178,6 +186,7 @@ function respond(slot) {
 
 function results() {
   const chart = get("chart");
+  chart.replaceChildren();
   for (const [i, name] of conditions.entries()) {
     const { correct, total } = scores[i];
     const percent = 100 * correct / total;
@@ -208,15 +217,23 @@ get("start").addEventListener("click", () => show("instructions"));
 get("practice-start").addEventListener("click", () => begin(true));
 get("scored-start").addEventListener("click", () => begin(false));
 get("view-results").addEventListener("click", results);
+get("try-again").addEventListener("click", () => begin(false));
 next.addEventListener("click", startTrial);
 document.addEventListener("keydown", (event) => {
+  if (event.key === " " && ["ready", "fixation", "stimulus"].includes(stage)) {
+    event.preventDefault();
+    if (stage === "ready" && !event.repeat) startTrial();
+  }
   if (stage === "response" && !event.repeat && ["1", "2"].includes(event.key)) {
     event.preventDefault();
     respond(Number(event.key) - 1);
   }
 });
 document.addEventListener("visibilitychange", () => {
-  if (document.hidden && ["fixation", "stimulus", "response"].includes(stage)) ready();
+  if (document.hidden && ["fixation", "stimulus", "response"].includes(stage)) {
+    cancelAnimationFrame(animationFrame);
+    ready();
+  }
 });
 
 fetch("stimuli.json")
